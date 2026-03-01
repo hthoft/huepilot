@@ -112,7 +112,7 @@ DEFAULT_HUE_BULB = "My Hue Light"
 HUE_TRANSITION_TIME = 5
 
 # Hue brightness override (None = auto from RGB, 1-100 = fixed percentage)
-HUE_BRIGHTNESS_PCT: Optional[int] = 1
+HUE_BRIGHTNESS_PCT: Optional[int] = 100
 
 # ---------------------------------------------------------------------------
 # State definitions
@@ -128,8 +128,8 @@ class CopilotState(enum.Enum):
 
 # Colors mapped to states – ready for WS2812B integration
 STATE_COLORS: dict[CopilotState, tuple[int, int, int]] = {
-    CopilotState.GENERATING: (0, 80, 255),    # Blue  – thinking
-    CopilotState.AWAITING:   (0, 40, 128),   # Orange – your turn
+    CopilotState.GENERATING: (0, 128, 255),    # Blue  – thinking
+    CopilotState.AWAITING:   (128, 0, 255),   # Orange – your turn
     CopilotState.IDLE:       (0, 90, 0),      # Green  – ready
     CopilotState.OFFLINE:    (255, 0, 0),      # Red    – offline
 }
